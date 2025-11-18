@@ -1,0 +1,26 @@
+﻿using System.ComponentModel.DataAnnotations; 
+using System.ComponentModel.DataAnnotations.Schema;
+namespace CourseLibrary.Entiies;
+
+public class Course
+{
+    [Key]
+    public Guid CourseId { get; set; }
+
+    [Required]
+    [MaxLength(100)]
+    public string Title { get; set; }
+
+    [MaxLength(1500)]
+    public string? Description { get; set; }
+
+    [ForeignKey("AuthorId")]
+    public Author Author { get; set; } = null!;
+
+    public Guid AuthorId { get; set; }
+
+    public Course(string title)
+    {
+        Title = title; 
+    }
+}
