@@ -26,8 +26,7 @@ public class CourseController : ControllerBase
         return Ok(_mapper.Map<IEnumerable<CourseDto>>(courses));
     }
 
-    [HttpGet("{courseId}")]
-
+    [HttpGet("{courseId}" , Name = "GetCourse")]
     public async Task<ActionResult<CourseDto>> GetCourse(Guid authorId , Guid courseId)
     {
         if (! await _courseLibraryRepository.AuthorExistsAsync(authorId))
@@ -38,7 +37,6 @@ public class CourseController : ControllerBase
             return NotFound();
         return Ok(_mapper.Map<CourseDto>(courseForTheAuthor));
     }
-
     [HttpPost]
     public async Task<ActionResult<CourseDto>> CreateCourse(Guid authorId, CourseForCreationDto courseDto)
     {
@@ -48,11 +46,12 @@ public class CourseController : ControllerBase
         _courseLibraryRepository.AddCourse(authorId , courseEntity);
         await _courseLibraryRepository.SaveAsync();
         var courseToReturn = _mapper.Map<CourseDto>(courseEntity);
-        return Ok(courseToReturn);
+        return CreatedAtRoute("GetCourse" 
+            ,new {authorId = courseEntity.AuthorId , courseId = courseEntity.CourseId}
+            ,courseToReturn);
     }
 
     [HttpPut("{courseId}")]
-
     public async Task<ActionResult<CourseDto>> UpdateCourse(Guid authorId
         , Guid courseId
         , CourseDto courseDto)
@@ -72,7 +71,6 @@ public class CourseController : ControllerBase
     }
 
     [HttpDelete("{courseId}")]
-
     public async Task<ActionResult> DeleteCourse(Guid authorId, Guid courseId)
     {
         if (!await _courseLibraryRepository.AuthorExistsAsync(authorId))
@@ -85,6 +83,4 @@ public class CourseController : ControllerBase
         await _courseLibraryRepository.SaveAsync();
         return NoContent();
     }
-
-
 }

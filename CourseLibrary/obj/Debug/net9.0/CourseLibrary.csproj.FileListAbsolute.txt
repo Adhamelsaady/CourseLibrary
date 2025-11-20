@@ -214,3 +214,4 @@ D:\Projects\CourseLibrary\CourseLibrary\obj\Debug\net9.0\refint\CourseLibrary.dl
 D:\Projects\CourseLibrary\CourseLibrary\obj\Debug\net9.0\CourseLibrary.pdb
 D:\Projects\CourseLibrary\CourseLibrary\obj\Debug\net9.0\CourseLibrary.genruntimeconfig.cache
 D:\Projects\CourseLibrary\CourseLibrary\obj\Debug\net9.0\ref\CourseLibrary.dll
+D:\Projects\CourseLibrary\CourseLibrary\obj\Debug\net9.0\CourseLibrary.sourcelink.json
