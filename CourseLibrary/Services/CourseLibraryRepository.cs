@@ -65,7 +65,7 @@ public class CourseLibraryRepository : ICourseLibraryRepository
 
     public void UpdateCourse(Course course)
     {
-        // no code in this implementation
+        _context.Update(course);
     }
 
     public void AddAuthor(Author author)

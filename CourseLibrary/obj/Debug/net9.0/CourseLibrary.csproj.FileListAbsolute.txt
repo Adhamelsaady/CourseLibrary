@@ -215,3 +215,7 @@ D:\Projects\CourseLibrary\CourseLibrary\obj\Debug\net9.0\CourseLibrary.pdb
 D:\Projects\CourseLibrary\CourseLibrary\obj\Debug\net9.0\CourseLibrary.genruntimeconfig.cache
 D:\Projects\CourseLibrary\CourseLibrary\obj\Debug\net9.0\ref\CourseLibrary.dll
 D:\Projects\CourseLibrary\CourseLibrary\obj\Debug\net9.0\CourseLibrary.sourcelink.json
+D:\Projects\CourseLibrary\CourseLibrary\bin\Debug\net9.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\Projects\CourseLibrary\CourseLibrary\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Projects\CourseLibrary\CourseLibrary\bin\Debug\net9.0\Newtonsoft.Json.dll
+D:\Projects\CourseLibrary\CourseLibrary\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CourseLibrary.Entiies;
+using CourseLibrary.Models;
 
 public class CourseProfile : Profile
 {
@@ -7,5 +8,6 @@ public class CourseProfile : Profile
     {
         CreateMap<Course, CourseDto>();
         CreateMap<CourseForCreationDto, Course>();
+        CreateMap<CourseForUpdateDto, Course>().ReverseMap();
     }
 }

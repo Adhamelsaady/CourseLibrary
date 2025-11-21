@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CourseLibrary.Entiies;
+using CourseLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
@@ -33,15 +34,17 @@ public class AuthorController : ControllerBase
     }
 
     [HttpPost]  
-    public async Task<ActionResult<AuthorDto>> CreateAuthor(AuthorDto author)
+    public async Task<ActionResult<AuthorDto>> CreateAuthor(
+        AuthorForCreationDto author)
     {
         var authorEntity = _mapper.Map<Author>(author);
         _courseLibraryRepository.AddAuthor(authorEntity);
+        await _courseLibraryRepository.SaveAsync();
         var authorToReturn = _mapper.Map<AuthorDto>(authorEntity);
-        return CreatedAtRoute("GetAuthour"
+        return CreatedAtRoute("GetAuthor"
             , new {authorId = authorToReturn.AuthorId} 
             , authorToReturn
             );
     }
-        
+
 }
